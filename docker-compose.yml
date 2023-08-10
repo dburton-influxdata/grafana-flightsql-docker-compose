@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  grafana:
+    image: grafana/grafana:latest
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./grafana_data:/var/lib/grafana
+      - ./datasources:/etc/grafana/provisioning/datasources
+    environment:
+      GF_INSTALL_PLUGINS: "influxdata-flightsql-datasource"
+      GF_DATASOURCES_PATH: "/etc/grafana/provisioning/datasources"
