@@ -1,0 +1,1 @@
+The grafana_data directory gets loaded as a volumen by the docker container for Grafana. Running the docker compose up command will create all the necesary files and Grafana will write to this directory.
