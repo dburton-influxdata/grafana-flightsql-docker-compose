@@ -1,0 +1,21 @@
+apiVersion: 1
+datasources:
+  - name: Your Data source name #this-attribute-is-used-to-displays-in-grafana-UI
+    type: influxdata-flightsql-datasource
+    access: proxy
+    url: http://<URL-of-your-Cluster>:443 #this-attribute-is-used-to-displays-in-grafana-UI
+    jsonData:
+      tlsAuth: true
+      token: mytoken
+      host: <URL-of-your-Cluster>:443
+      secure: true
+      metadata: [
+            {
+                "bucket-name": "your_bucket_or_database_name"
+            }
+        ]
+      selectedAuthType: token
+      username: ""
+    secureJsonData:
+      tlsClientCert: 'your database token'
+      token: 'your database token'
